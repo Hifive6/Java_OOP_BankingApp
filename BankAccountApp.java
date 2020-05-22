@@ -9,6 +9,12 @@ public class BankAccountApp {
         System.out.println("***************");
 
         chkacc1.showInfo();
+
+        sacc1.deposit(5000);
+        sacc1.withdraw(200);
+        sacc1.transfer("Checking", 300);
+
+
         // Read aCSV file then create new accounts base on that data
     }
 }
