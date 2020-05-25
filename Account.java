@@ -1,17 +1,17 @@
 public abstract class Account implements IBaseRate {
     //list common properties for check and saving accounts
-    String name;
-    String sSN;
-    double balance;
-    static int index = 10000;
-    String accountNumber;
-    double rate;
+    private String name;
+    private String sSN;
+    private double balance;
+    private static int index = 10000;
+    protected String accountNumber;
+    protected double rate;
+
     // Constructor to set base properties and initialize the account
     public Account(String name, String sSN, double initDeposit){
        this.name = name;
        this.sSN = sSN;
        balance = initDeposit;
-       
 
        //set account number
        index++;
@@ -28,6 +28,14 @@ public abstract class Account implements IBaseRate {
         int randomNumber = (int)(Math.random() * Math.pow(10, 3));
         return lastTwoOfSSN + uniqueID + randomNumber;
     }
+
+    public void compound(){
+        double accrueInterest = balance * (rate/100);
+        balance = balance + accrueInterest;
+        System.out.println("Accured Interest $" + accrueInterest);
+        printBalance();
+    }
+
     //list common methods
     public void deposit(double amount){
         balance = balance + amount;

@@ -1,12 +1,12 @@
 
 public class Savings extends Account {
     //List properties specific to saving account
-    int safetyDepositBoxID;
-    int safetyDepositBoxKey;
+    private int safetyDepositBoxID;
+    private int safetyDepositBoxKey;
     //constructor for savings account
     public Savings(String name, String sSN, double initDeposit){
         super(name, sSN, initDeposit);
-        accountNumber = "2" + accountNumber;
+        accountNumber = "1" + accountNumber;
         setSafetyDepositBox();
     }
 
